@@ -1,0 +1,44 @@
+cont = 'y'
+while cont == 'y':
+    print ('1. Sortyvanna za alfavitom\n2. Top 5 povtoryvanuh sliv\n3. Najbilshe slovo ')
+    ans = input()
+    if ans == '1':
+        a = input('Vvedit slova: ')
+        b = a.split()
+        c = b.sort()
+        k = [] 
+        for i in b:
+            if (a.count(i)>= 1 and (i not in k)):
+                k.append(i)
+        print(' '.join(k))
+
+    elif ans == '2':
+        
+        def word_count(str):
+            counts = dict()
+            words = str.split()
+
+            for word in words:
+                if word in counts:
+                    counts[word] += 1
+                else:
+                    counts[word] = 1
+
+            return counts
+
+        print( word_count(input('Vvedit slova: ')))
+
+
+
+    elif ans == '3':
+        slova = input ('Vvedit slova: ')
+        s=slova.split()
+        max=0
+        for ele in s:
+            if len(ele)>max:
+                max=len(ele)
+                max_word=ele
+        print(max_word)
+    else:
+        print('pomilka')
+    cont = input('Cont\nY or N ')
